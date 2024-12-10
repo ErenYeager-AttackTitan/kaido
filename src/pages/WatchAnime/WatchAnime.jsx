@@ -329,7 +329,7 @@ export default function WatchAnime() {
         }}
       />
 
-      <DisqusComments identifier={searchResults} />
+      <DisqusComments identifier=searchResults/>
 
       <RecommendedTopTen />
     </motion.div>
