@@ -39,7 +39,9 @@ export default function WatchAnime() {
    * if yes then it does not re-render the component or does not change the state
    */
 
-  useEffect(() => {
+  
+
+    useEffect(() => {
     const fetchData = async () => {
       try {
         // Await search results
@@ -50,8 +52,6 @@ export default function WatchAnime() {
         setLoading(false); // Data has been fetched, whether successful or not
       }
     };
-
-    fetchData();
 
   const [subIsSelected, setSubIsSelected] = useState(true);
   const [subInfo, setSubInfo] = useState({});
@@ -336,16 +336,21 @@ export default function WatchAnime() {
       ) : (
         <LoadingSpinner />
       )}
-
+<div>
       <Share
         style={{
           paddingInline: 20,
         }}
       />
+    </div>
 
-     {searchResults && <DisqusComments identifier={searchResults} />}
-
+<div>
+{searchResults && <DisqusComments identifier={searchResults} />}  
+</div>  
+      
+     <div>
       <RecommendedTopTen />
     </motion.div>
+    </div>
   );
 }
