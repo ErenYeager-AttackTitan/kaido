@@ -39,6 +39,20 @@ export default function WatchAnime() {
    * if yes then it does not re-render the component or does not change the state
    */
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Await search results
+        await searchResults; // If searchResults is a promise, await it
+      } catch (err) {
+        setError('Error fetching data');
+      } finally {
+        setLoading(false); // Data has been fetched, whether successful or not
+      }
+    };
+
+    fetchData();
+
   const [subIsSelected, setSubIsSelected] = useState(true);
   const [subInfo, setSubInfo] = useState({});
   const [dubInfo, setDubInfo] = useState({});
@@ -329,8 +343,7 @@ export default function WatchAnime() {
         }}
       />
 
-      {/* Disqus Comments */}
-      <DisqusComments identifier={searchResults} />
+     {searchResults && <DisqusComments identifier={searchResults} />}
 
       <RecommendedTopTen />
     </motion.div>
