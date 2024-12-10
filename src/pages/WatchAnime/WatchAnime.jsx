@@ -348,6 +348,6 @@ export default function WatchAnime() {
       {searchResults && <DisqusComments identifier={searchResults} />}  
 
       <RecommendedTopTen />
-      </motion.div>
+    </motion.div>
   );
 }
