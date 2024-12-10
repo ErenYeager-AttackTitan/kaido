@@ -3,19 +3,49 @@ import React, { useEffect } from "react";
 export default function VideoPlayer({ url }) {
   const playerId = "jwplayer-container";
 
+  // Define your custom CSS styles as a string
+  const customStyles = `
+    .wrap #player {
+        position: absolute;
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .wrap .btn {
+        position: absolute;
+        top: 15%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: white;
+        color: black;
+        font-size: 12px;
+        padding: 6px 12px;
+        border: 1px solid white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .wrap .btn {
+            font-size: 08px;
+        }
+    }
+  `;
+
   useEffect(() => {
     const loadJWPlayer = () => {
+      // Load the JWPlayer script from your CDN
       const script = document.createElement("script");
       script.src = "https://cdn.jsdelivr.net/gh/ErenYeager-AttackTitan/jwplayer/jw.js"; // Your JWPlayer CDN link
       script.onload = initializePlayer;
       document.body.appendChild(script);
-    };
-
-    const loadCSS = () => {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "https://cdn.jsdelivr.net/gh/erenYeager-AttackTitan/jw-style/style.css"; // Your custom CSS CDN link
-      document.head.appendChild(link);
+      
+      // Load your custom CSS from the CDN (if needed)
+      const customCSS = document.createElement("link");
+      customCSS.rel = "stylesheet";
+      customCSS.href = "https://cdn.jsdelivr.net/gh/ErenYeager-AttackTitan/jw-style/player_anikatsu.css"; // Your custom CSS CDN
+      document.head.appendChild(customCSS);
     };
 
     const initializePlayer = () => {
@@ -33,15 +63,20 @@ export default function VideoPlayer({ url }) {
     };
 
     loadJWPlayer();
-    loadCSS();
 
     return () => {
       const jwScript = document.querySelector(`script[src*="jwplayer"]`);
-      const cssLink = document.querySelector(`link[href*="style.css"]`);
+      const customCSS = document.querySelector(`link[href*="player_anikatsu.css"]`);
       if (jwScript) jwScript.remove();
-      if (cssLink) cssLink.remove();
+      if (customCSS) customCSS.remove();
     };
   }, [url]);
 
-  return <div id={playerId}></div>;
+  return (
+    <div>
+      {/* Inject custom CSS directly */}
+      <style>{customStyles}</style>
+      <div id={playerId} className="wrap"></div>
+    </div>
+  );
 }
