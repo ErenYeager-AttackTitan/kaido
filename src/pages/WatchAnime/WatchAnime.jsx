@@ -38,12 +38,6 @@ export default function WatchAnime() {
    * if yes then it does not re-render the component or does not change the state
    */
 
-    const disqusShortname = {searchResults}; // Replace with your Disqus shortname
-  const disqusConfig = {
-    url: window.location.href,
-    identifier: `anime-episode-${episodeId}`, // Ensure unique ID per episode
-    title: subIsSelected ? subInfo.title : dubInfo.title,
-  };
 
   const [subIsSelected, setSubIsSelected] = useState(true);
   const [subInfo, setSubInfo] = useState({});
@@ -283,14 +277,6 @@ export default function WatchAnime() {
           </div>
 
 
-          {/* Disqus Comments Section */}
-          <div className="comments-section">
-            <Disqus
-              shortname={disqusShortname}
-              config={disqusConfig}
-            />
-          </div>
-        </div>
 
           
           <div className="current-anime-details ">
