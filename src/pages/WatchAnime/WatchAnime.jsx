@@ -336,22 +336,18 @@ export default function WatchAnime() {
       ) : (
         <LoadingSpinner />
       )}
-<div>
+
       <Share
         style={{
           paddingInline: 20,
         }}
       />
-    </div>
 
-<div>
-{searchResults && <DisqusComments identifier={searchResults} />}  
-</div>  
-      
-     <div>
+
+
+      {searchResults && <DisqusComments identifier={searchResults} />}  
+
       <RecommendedTopTen />
-    
-    </div>
       </motion.div>
   );
 }
