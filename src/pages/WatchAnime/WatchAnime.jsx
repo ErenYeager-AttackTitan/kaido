@@ -1,3 +1,4 @@
+import DisqusComments from '../../components/DisqusComments'; // Adjust path if needed
 import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
