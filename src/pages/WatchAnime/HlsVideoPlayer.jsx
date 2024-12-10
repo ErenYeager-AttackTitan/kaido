@@ -14,7 +14,7 @@ export default function VideoPlayer({ url }) {
     const initializePlayer = () => {
       if (window.jwplayer) {
         window.jwplayer(playerId).setup({
-          file: url,
+          file: `https://goodproxy.eren-yeager-founding-titan-9.workers.dev/fetch?url=${url}`, // Correct string concatenation
           width: "100%",
           aspectratio: "16:9",
           controls: true,
