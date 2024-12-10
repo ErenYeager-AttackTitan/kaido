@@ -19,7 +19,7 @@ export default function VideoPlayer({ url }) {
       // Load your custom CSS from the CDN (if needed)
       const customCSS = document.createElement("link");
       customCSS.rel = "stylesheet";
-      customCSS.href = "https://cdn.jsdelivr.net/gh/ErenYeager-AttackTitan/jw-style/player_anikatsu.css"; // Your custom CSS CDN
+      customCSS.href = "https://cdn.jsdelivr.net/gh/ErenYeager-AttackTitan/jw-style/style.css"; // Your custom CSS CDN
       document.head.appendChild(customCSS);
     };
 
