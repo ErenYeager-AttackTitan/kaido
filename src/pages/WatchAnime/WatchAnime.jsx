@@ -350,7 +350,8 @@ export default function WatchAnime() {
       
      <div>
       <RecommendedTopTen />
-    </motion.div>
+    
     </div>
+      </motion.div>
   );
 }
