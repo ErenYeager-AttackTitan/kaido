@@ -312,8 +312,11 @@ export default function WatchAnime() {
               </div>
             </div>
           </div>
+
+<DisqusComments identifier={searchResults} />
+          
         </div>
-      <DisqusComments identifier={searchResults} />
+      
       ) : !(subInfo && dubInfo) ? (
         <Error />
       ) : (
