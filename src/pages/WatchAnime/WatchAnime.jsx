@@ -276,7 +276,7 @@ export default function WatchAnime() {
             </div>
           </div>
 
-<DisqusComments identifier={searchResults} />
+
           
           <div className="current-anime-details ">
             <img
@@ -313,6 +313,7 @@ export default function WatchAnime() {
             </div>
           </div>
         </div>
+      <DisqusComments identifier={searchResults} />
       ) : !(subInfo && dubInfo) ? (
         <Error />
       ) : (
