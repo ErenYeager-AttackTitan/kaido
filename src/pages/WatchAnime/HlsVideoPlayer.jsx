@@ -5,32 +5,7 @@ export default function VideoPlayer({ url }) {
 
   // Define your custom CSS styles as a string
   const customStyles = `
-    .wrap #player {
-        position: absolute;
-        height: 100% !important;
-        width: 100% !important;
-    }
-
-    .wrap .btn {
-        position: absolute;
-        top: 15%;
-        left: 90%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: white;
-        color: black;
-        font-size: 12px;
-        padding: 6px 12px;
-        border: 1px solid white;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-
-    @media screen and (max-width: 600px) {
-        .wrap .btn {
-            font-size: 08px;
-        }
-    }
+    
   `;
 
   useEffect(() => {
