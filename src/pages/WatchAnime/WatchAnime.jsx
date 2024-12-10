@@ -313,7 +313,7 @@ export default function WatchAnime() {
             </div>
           </div>
 
-<DisqusComments identifier={searchResults} />
+
           
         </div>
       
@@ -328,6 +328,8 @@ export default function WatchAnime() {
           paddingInline: 20,
         }}
       />
+
+      <DisqusComments identifier={searchResults} />
 
       <RecommendedTopTen />
     </motion.div>
